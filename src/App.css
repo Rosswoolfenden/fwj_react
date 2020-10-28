@@ -14,7 +14,19 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background-color: green;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App-header2 {
+  /* background-color: #282c34; */
+  background-color: red;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,8 +41,8 @@
 }
 
 .onoff {
-  height: 100px;
-  width: 100px;
+  height: 400px;
+  width: 230px;
 }
 
 @keyframes App-logo-spin {
