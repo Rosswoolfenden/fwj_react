@@ -6,6 +6,8 @@ import cry from './img/joshcry.jpg';
 import kill from './img/joshkillme.jpg';
 import './App.css';
 import axios from 'axios';
+import cryround from './img/roundcry.png';
+import round from './img/round.png';
 
 
 // let light = true;
@@ -18,31 +20,28 @@ function App() {
   const [light, setLight] = useState(1);
   const [stringLight, setStringLight] = useState("POWER IS ON");
   const [curimg, setCurimg] = useState(0);
+  const [test, setText] = useState("TOUCH HIS JOSH'S FACE TO MAKE HIM CRY");
   const [ccs, setCcs] = useState('App-header')
   let img = kill;
   // console.log(light);
 
   const imgages = [kill, cry];
-  // useEffect(() => {
-  //   if(light) {
-  //     img = cry;
-  //   } else {
-  //     img = kill;
-  //   }
-  // }) ;
   return (
     <div className="App">
       <header className={ccs} >
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        
+        <h1> LETS FUCK WITH HARVEY</h1>
+
         <button onClick={() => fuckWithJosh(light) }>
-          <img src={ imgages[curimg] } className="onoff" />
+          <img src={ imgages[curimg] } className="onoff" alt="logo"/>
         </button>
         <p>
-            TOUCH HIM TO MAKE HIM CRY
+          {test}
         </p>
-        <h1> { stringLight }</h1>
+        <h1 className="App"> { stringLight }</h1>
       </header>
+      <footer>
+      <img src={cryround} className="App-logo" alt="logo" />
+      </footer>
     </div>
   );
   async function whatimg() {
@@ -59,6 +58,7 @@ function App() {
       setStringLight('POWER IS OFF')
       setCurimg(1);
       setCcs("App-header2")
+      setText("HAHAHAAHHA - Touch again to return power")
       
     } else {
       await lightToggle(true);
@@ -66,6 +66,7 @@ function App() {
       setStringLight('POWER IS ON');
       setCurimg(0);
       setCcs("App-header")
+      setText("TOUCH HIS JOSH'S FACE TO MAKE HIM CRY");
     }
   }
 
